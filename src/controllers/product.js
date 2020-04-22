@@ -24,24 +24,13 @@ module.exports = {
           }
           const result = await productModel.getAll(searchName, pagination, category)
     
-          miscHelper.response(response, 200, result, pager)
+          miscHelper.customResponse(response, 200, result, pager)
         } catch (error) {
           console.log(error)
           miscHelper.cutomErrorResponse(response, 400, 'Internal server error')
         }
       },
-
-      getNew: async (request, response) => {
-        try { 
-          const result = await productModel.getNew()
-          miscHelper.response(response, 200, result)
-
-        }
-        catch (error) {
-          console.log(error)
-          miscHelper.cutomErrorResponse(response, 400, 'Internal server error')
-        }
-      },
+      
 
   getDetail: async (request, response) => {
     try {

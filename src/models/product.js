@@ -41,16 +41,6 @@ module.exports = {
         })
       },
 
-      getNew: () => {
-        return new Promise((resolve, reject) => {
-          connection.query(
-            "SELECT * FROM product ORDER BY created DESC LIMIT 4", (error, result) => {
-              if (error) reject (new Error(error));
-              resolve(result);
-            }
-          ) 
-        })
-      },
 
 
   getDetail: productId => {
